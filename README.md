@@ -127,3 +127,14 @@ This command creates a folder containing two gradle projects, one is to act as a
 	compile group: 'org.grails.plugins', name: 'spring-security-rest', version: '3.0.0.RC1'
 	```
 9. Now, execute `grails compile` and then `grails s2-quickstart com.mysecurerest User Privilege` to generate user and privilege domain classes and their proper configuration inside `application.groovy`.
+
+10. Next, add the following lines to `application.groovy`:
+	
+	```groovy
+	grails.plugin.springsecurity.rest.login.endpointUrl = '/logIn'
+	// a different algorith can be used
+	grails.plugin.springsecurity.password.algorithm = 'SHA-256'
+	grails.plugin.springsecurity.password.hash.iterations = 1
+	grails.plugin.springsecurity.rest.token.storage.jwt.secret = <password_secret>
+	grails.plugin.springsecurity.rest.token.storage.jwt.expiration = 86400
+	```
