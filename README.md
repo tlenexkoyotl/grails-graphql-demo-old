@@ -119,7 +119,7 @@ This command creates a folder containing two gradle projects, one is to act as a
 	}
 	```
 
-8. Add the following dependencies to server `build.gradle` for use of Spring Security REST
+8. Add the following dependencies to server `build.gradle` immediately after `compile "org.grails.plugins:async"` for use of Spring Security REST
 
 	```gradle
 	// Spring Security
