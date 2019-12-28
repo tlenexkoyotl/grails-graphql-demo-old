@@ -118,3 +118,12 @@ This command creates a folder containing two gradle projects, one is to act as a
 	    }
 	}
 	```
+
+8. Add the following dependencies to server `build.gradle` for use of Spring Security REST
+
+	```gradle
+	// Spring Security
+	compile group: 'org.grails.plugins', name: 'spring-security-core', version: '3.1.2'
+	compile group: 'org.grails.plugins', name: 'spring-security-rest', version: '3.0.0.RC1'
+	```
+9. Now, execute `grails compile` and then `grails s2-quickstart com.mysecurerest User Privilege` to generate user and privilege domain classes and their proper configuration inside `application.groovy`.
